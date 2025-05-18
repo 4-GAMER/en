@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest" lang="en">
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Baderlink PSFree Exploit For 9.00</title>
+        <style>
+            @font-face {
+                font-family: 'logging';
+                src: url('fonts/LiberationMono-Regular.ttf');
+            }
+            
+            :root {
+                --primary: #2c3e50;
+                --secondary: #34495e;
+                --accent: #3498db;
+                --text: #ecf0f1;
+                --text-secondary: #bdc3c7;
+                --console-bg: #1a1a1a;
+            }
+            
+            body {
+                font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                background-color: var(--primary);
+                color: var(--text);
+                margin: 0;
+                padding: 0;
+                line-height: 1.6;
+                background-image: url('img.jpg');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                position: relative;
+            }
+            
+            body::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                z-index: -1;
+            }
+            
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 2rem;
+                position: relative;
+                z-index: 1;
+            }
+            
+            header {
+                text-align: center;
+                margin-bottom: 2rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid var(--secondary);
+            }
+            
+            .logo {
+                font-size: 3.5rem;
+                font-weight: 700;
+                color: #fff;
+                text-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
+                margin-bottom: 0.5rem;
+                letter-spacing: 2px;
+            }
+            
+            .logo span {
+                color: #3498db;
+            }
+            
+            h1 {
+                color: var(--accent);
+                margin-bottom: 0.5rem;
+                font-weight: 300;
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                color: var(--text-secondary);
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .warning {
+                background-color: rgba(255, 0, 0, 0.2);
+                border: 1px solid red;
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 5px;
+                text-align: center;
+                color: white;
+            }
+            
+            #console {
+                font-family: 'logging', monospace;
+                background-color: rgba(26, 26, 26, 0.8);
+                padding: 1.5rem;
+                border-radius: 4px;
+                min-height: 200px;
+                overflow-y: auto;
+                white-space: pre-wrap;
+                margin-top: 1.5rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            }
+            
+            a {
+                color: var(--accent);
+                text-decoration: none;
+                transition: color 0.2s;
+            }
+            
+            a:hover {
+                color: #2980b9;
+            }
+            
+            .footer {
+                text-align: center;
+                margin-top: 2rem;
+                color: var(--text-secondary);
+                font-size: 0.9rem;
+            }
+            
+            @media (max-width: 768px) {
+                .container {
+                    padding: 1rem;
+                }
+                
+                h1 {
+                    font-size: 1.8rem;
+                }
+                
+                .logo {
+                    font-size: 2.5rem;
+                }
+            }
+        </style>
+        <script>
+            // Redirect user to cache page if not cached
+            if (window.applicationCache && window.applicationCache.status == 0) {
+                window.location.replace("cache.html");
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="logo"><span>Bader</span>link</div>
+                <div class="subtitle">PS4 9.00 Exploit Chain - No USB Required</div>
+            </header>
+            
+            <div class="warning">
+                <strong>Important Warning:</strong> 
+                <ul style="text-align: left; list-style-position: inside;">
+                    <li>You may experience stability issues on first launch, please restart your device and try again</li>
+                    <li>The new exploit does not require a USB flash drive</li>
+                    <li>GoldHEN will be activated automatically after a few seconds</li>
+                </ul>
+            </div>
+            
+            <pre id="console"></pre>
+            
+            <div class="footer">
+                &copy; 2025 Baderlink - Offline Ready PS4 Jailbreak
+            </div>
+        </div>
+        
+        <script src="./payload.js"></script>
+        <script type='module' src='./alert.mjs'></script>
+    </body>
+</html>

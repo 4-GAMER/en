@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Baderlink PSFree - Cache Installation</title>
+<style>
+    @font-face {
+        font-family: 'logging';
+        src: url('fonts/LiberationMono-Regular.ttf');
+    }
+    
+    body {
+        font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background-image: url('img.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        position: relative;
+        text-align: center;
+        color: #ecf0f1;
+    }
+    
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    }
+    
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .logo {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
+        margin-bottom: 0.5rem;
+        letter-spacing: 2px;
+        margin-top: 30px;
+    }
+    
+    .logo span {
+        color: #3498db;
+    }
+    
+    h1 {
+        margin-top: 30px;
+    }
+    
+    #msgs {
+        font-size: 30px;
+        margin-top: 77px;
+        margin-bottom: 455px;
+    }
+    
+    .warning {
+        background-color: rgba(255, 0, 0, 0.2);
+        border: 1px solid red;
+        padding: 10px;
+        margin: 10px auto;
+        border-radius: 5px;
+        text-align: center;
+        color: white;
+        max-width: 80%;
+    }
+</style>
+</head>
+<body>
+<script>
+history.replaceState(null,null,
+'index.html');var histlength=history.length;history.go(-histlength);
+function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));setTimeout(function(){window.msgs.innerHTML="Installing cache, please wait " + Percent + "%";},500)}
+function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache installed successfully ✔";},1500);setTimeout(function(){window.msgs.innerHTML="Now close the browser and open it again to use offline";},3500);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+</script>
+<div class="container">
+    <div class="logo"><span>Bader</span>link</div>
+    <h1>PSFree Offline Cache Installation</h1>
+    <hr>
+    <br>
+    <div class="warning">
+        <strong>Important Warning:</strong> 
+        <ul style="text-align: left; list-style-position: inside;">
+            <li>The new exploit does not require a USB flash drive</li>
+            <li>GoldHEN will be activated automatically after a few seconds</li>
+            <li>You may experience stability issues on first launch, please restart your device and try again</li>
+        </ul>
+    </div>
+    <h1 id="msgs">Starting cache installation...</h1>
+</div>
+</body>
+</html>
